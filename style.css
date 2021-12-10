@@ -1,0 +1,787 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-blue: rgb(63, 115, 255);
+    --background-blue: rgb(223, 232, 255);
+    --primary-green: rgba(53, 239, 128, .2);
+    --secondary-green: rgb(0, 209, 85);
+    --primary-pink: rgb(254, 90, 197);
+    --primary-yellow: rgba(255, 189, 92, .2);
+    --secondary-yellow: rgb(255, 151, 0);
+
+}
+
+.weather-body {
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-family: "Roboto", sans-serif;
+}
+
+/* --------------------- left fixed navbar ---------------------- */
+
+.left-navbar {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    height: 30%;
+    width: 3%;
+    background-color: var(--primary-blue);
+    border-radius: 0 10px 10px 0;
+}
+
+
+.left-navbar .nav-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    cursor: pointer;
+
+}
+
+.left-navbar .nav-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-row: span 1;
+    color: aliceblue;
+}
+
+.left-navbar .nav-container div.active {
+    background-color: rgb(238, 62, 159);
+    border-radius: 0 10px 10px 0;
+}
+
+.left-navbar .nav-container div:hover {
+    background-color: rgb(238, 62, 159);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+
+/* ----------------------- left main section -------------------------- */
+
+.left-side {
+    height: 100%;
+    grid-column: span 5;
+    background-color: var(--background-blue);
+}
+
+/*----- header area -----*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem;
+    letter-spacing: 1px;
+
+}
+
+.header h1 {
+    color: var(--primary-blue);
+    font-size: 3rem;
+}
+
+.header h4 {
+    color: rgb(82, 77, 77);
+    font-size: 1rem;
+
+}
+
+.header h2 {
+    color: var(--primary-blue);
+    margin: 1rem 0;
+}
+
+.header h2 i {
+    margin-right: 1rem;
+}
+
+.theme {
+    background-color: white;
+    border-radius: 20px;
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem;
+}
+
+.theme button {
+    color: var(--primary-blue);
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+}
+
+.theme button.pressed {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/*---- area where day columns are present ---- */
+
+.day-container {
+    margin: 3rem;
+}
+
+.day-chart {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.day-chart .day {
+    height: 10rem;
+    width: 12%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+
+.day ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day li {
+    font-size: 1rem;
+}
+
+.day li i {
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--primary-blue);
+}
+
+.day-chart .day.present {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.day-chart .day.present i {
+    color: white;
+}
+
+.day-chart .day:hover,
+.day-chart .day:hover i {
+    background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ----- lowest section of left main side ----- */
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem;
+}
+
+.info-left,
+.info-right {
+    height: 60vh;
+    width: 49%;
+    border-radius: 20px;
+}
+
+/* ------------ */
+
+.info-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.air-index,
+.month-data {
+    height: 48%;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.air-index .heading {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.air-index .middle {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--secondary-green);
+    position: relative;
+}
+
+.air-index .middle i {
+    font-size: 2rem;
+}
+
+.air-index .middle .details {
+    position: absolute;
+    left: 4rem;
+}
+
+.air-index .middle button {
+    width: 4rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: var(--background-blue);
+    color: var(--primary-blue);
+}
+
+
+
+.air-index .tail {
+    display: flex;
+    justify-content: space-between;
+    height: 40%;
+    padding: .8rem;
+
+}
+
+.air-index .tail div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    border-radius: 10px;
+    background-color: var(--primary-green);
+    color: var(--secondary-green);
+    font-size: .8rem;
+}
+
+.month-data .heading {
+    padding: 1rem;
+}
+
+.month-data .tail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 65%;
+    padding: 1rem;
+}
+
+.month-data .tail .shell {
+    height: 100%;
+    width: 10px;
+    position: relative;
+    background-color: var(--background-blue);
+    border-radius: 10px;
+}
+
+.shell .data {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+}
+
+.shell .data.num1 {
+    height: 75%;
+}
+
+.shell .data.num2 {
+    height: 85%;
+}
+
+.shell .data.num3 {
+    height: 80%;
+}
+
+.shell .data.num4 {
+    height: 85%;
+}
+
+.shell .data.num5 {
+    height: 70%;
+}
+
+.shell .data.num6 {
+    height: 80%;
+}
+
+.shell .data.num7 {
+    height: 70%;
+}
+
+.shell .data.num8 {
+    height: 75%;
+}
+
+.shell .data.num9 {
+    height: 80%;
+}
+
+.shell .data.num10 {
+    height: 85%;
+}
+
+.shell .data.num11 {
+    height: 70%;
+}
+
+.shell .data.num12 {
+    height: 85%;
+}
+
+/* ---------- */
+
+.sun-time {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+
+.sun-time .middle {
+    height: 25%;
+    width: 100%;
+    background-color: var(--primary-yellow);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.sun-time .middle .city {
+    display: flex;
+    flex-direction: row;
+}
+
+.sun-time .middle .city i {
+    margin-right: 1rem;
+    color: var(--primary-blue);
+}
+
+
+
+.sun-time .middle .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--primary-blue);
+}
+
+
+
+.sun-time .middle .details i {
+    color: var(--secondary-yellow);
+    font-size: 2rem;
+}
+
+.sun-time .middle .details .sunrise,
+.sun-time .middle .details .sunset {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 45%;
+}
+
+.sun-time .middle .details .sunrise div,
+.sun-time .middle .details .sunset div {
+    padding-left: 1rem;
+}
+
+.sun-time .tail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25%;
+    width: 100%;
+}
+
+.sun-time .tail .line {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    color: var(--secondary-yellow);
+}
+
+.sun-time .tail .line .city {
+    color: var(--primary-blue);
+    text-align: left;
+}
+
+.sun-time .tail .line i {
+    margin-right: 5px;
+}
+
+
+
+/*-------------------- right main section--------------------- */
+
+.right_side {
+    height: 100%;
+    grid-column: span 2;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- container for searchbar and avatar pic ---- */
+
+.avatar-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 3rem;
+    justify-content: space-between;
+}
+
+.search {
+    width: 15rem;
+    height: 2rem;
+    position: relative;
+    display: flex;
+}
+
+.search-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid var(--background-blue);
+    border-right: none;
+    outline: none;
+    padding-left: 1rem;
+}
+
+.search-button {
+    width: 4rem;
+    height: 100%;
+    background-color: var(--background-blue);
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.bell-icon {
+    margin-left: 6rem;
+    padding: 5px;
+    color: var(--background-blue);
+    font-size: 1.2rem;
+    text-align: center;
+    position: relative;
+}
+
+.bell-icon .notification {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: red;
+    top: 5px;
+    left: 15px;
+}
+
+.avatar-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-left: 1.5rem;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- first card --- */
+
+.first-card {
+    width: 80%;
+    height: 60vh;
+    border-radius: 20px;
+    background-color: var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.first-card .city {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5rem;
+
+
+}
+
+.first-card .city i {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.first-card .city h3 {
+    font-size: 1rem;
+}
+
+.first-card .weather-icon {
+    font-size: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.first-card .info {
+    width: 100%;
+}
+
+.first-card .info .date {
+    text-align: center;
+    font-size: 1rem;
+
+}
+
+.first-card .info .temp {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.first-card .info .details {
+    text-align: center;
+    display: inline;
+}
+
+.first-card .info .details .status {
+    margin-bottom: 1rem;
+}
+
+.first-card .info .details .wind,
+.first-card .info .details .hum {
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-card .info .details i {
+    margin: 2px;
+}
+
+.first-card .info .details h3 {
+    width: 50%;
+    font-size: 1rem;
+}
+
+/* --- Second card --- */
+
+.second-card {
+    width: 80%;
+    height: 12vh;
+    margin-bottom: 3rem;
+    background-color: var(--primary-pink);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+}
+
+.second-card .details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-card .details .wind,
+.second-card .details .hum {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.second-card .details .wind {
+    margin-bottom: 1rem;
+}
+
+.second-card .details i {
+    margin: 2px;
+}
+
+.second-card .details h3 {
+    width: 50%;
+    font-size: 1rem;
+}
+
+
+.second-card .city-degree {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.second-card .city-degree .city {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+
+}
+
+.second-card .city-degree .city i {
+    margin-right: 10px;
+}
+
+.second-card .city-degree .city h3 {
+    font-size: 1rem;
+}
+
+.second-card .city-degree .temp {
+    font-size: 1.7rem;
+}
+
+
+/* ---- third card ---- */
+
+.third-card {
+    width: 80%;
+    position: relative;
+    height: 12vh;
+    margin-bottom: 3rem;
+}
+
+.bottom-card {
+    width: 100%;
+    height: 12vh;
+    position: absolute;
+    background-color: var(--primary-yellow);
+    border-radius: 20px;
+    border: 2px dashed var(--secondary-yellow);
+}
+
+.top-card {
+    width: 100%;
+    height: 12vh;
+    position: absolute;
+    background-color: var(--secondary-yellow);
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.top-card .details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-card .details .wind,
+.top-card .details .hum {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.top-card .details .wind {
+    margin-bottom: 1rem;
+}
+
+.top-card .details i {
+    margin: 2px;
+}
+
+.top-card .details h3 {
+    width: 50%;
+    font-size: 1rem;
+}
+
+
+.top-card .city-degree {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.top-card .city-degree .city {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+
+}
+
+.top-card .city-degree .city i {
+    margin-right: 10px;
+}
+
+.top-card .city-degree .city h3 {
+    font-size: 1rem;
+}
+
+.top-card .city-degree .temp {
+    font-size: 1.7rem;
+}
+
+
+button:hover {
+    cursor: pointer;
+}

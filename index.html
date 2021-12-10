@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6b6260744e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather-site</title>
+</head>
+
+<body>
+
+    <div class="weather-body">
+
+
+        <div class="left-navbar">
+            <div class="nav-container">
+                <div class="home active"><i class="fa fa-home"></i></div>
+                <div class="home"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="home"><i class="fab fa-instagram"></i></div>
+                <div class="home"><i class="far fa-calendar-alt"></i></div>
+                <div class="home"><i class="fas fa-cog"></i></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="left-side">
+            <div class="header">
+                <div class="h-left">
+                    <h1>07:32 AM</h1>
+                    <h4>Tuesday, 7 December, 2021</h4>
+                    <h2><i class="far fa-sun"></i><span>Good Morning, Sanjoy!</span></h2>
+                </div>
+                <div class="h-right">
+                    <div class="theme">
+                        <button class="pressed"><i class="far fa-sun"></i></button>
+                        <button><i class="far fa-moon"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="day-container">
+                <div class="day-chart">
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-bolt"></i>
+                            </li>
+                            <li>Sun</li>
+                            <li>28&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-cloud-rain"></i>
+                            </li>
+                            <li>Mon</li>
+                            <li>17&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day present">
+                        <ul>
+                            <li>
+                                <i class="fas fa-cloud-sun-rain"></i>
+                            </li>
+                            <li>Tue</li>
+                            <li>20&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-smog"></i>
+                            </li>
+                            <li>Wed</li>
+                            <li>28&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-cloud-sun"></i>
+                            </li>
+                            <li>Thu</li>
+                            <li>28&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-cloud"></i>
+                            </li>
+                            <li>Fri</li>
+                            <li>28&deg</li>
+                        </ul>
+                    </div>
+                    <div class="day">
+                        <ul>
+                            <li>
+                                <i class="fas fa-cloud-moon-rain"></i>
+                            </li>
+                            <li>Sat</li>
+                            <li>28&deg</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info-container">
+                <div class="info-left">
+                    <div class="air-index">
+                        <div class="heading">
+                            <h3>Air Quality index</h3>
+                        </div>
+                        <div class="middle">
+                            <i class="fa fa-wind"></i>
+                            <div class="details">
+                                <h3>Good</h3>
+                                <h5>A perfect day for work!</h5>
+                            </div>
+                            <button>Refresh</button>
+                        </div>
+                        <div class="tail">
+                            <div>
+                                <h3>9.3</h3>
+                                <h4>PM2</h4>
+                            </div>
+                            <div>
+                                <h3>12.2</h3>
+                                <h4>PM10</h4>
+                            </div>
+                            <div>
+                                <h3>4.8</h3>
+                                <h4>SO<sub>2</sub></h4>
+                            </div>
+                            <div>
+                                <h3>4.6</h3>
+                                <h4>NO<sub>2</sub></h4>
+                            </div>
+                            <div>
+                                <h3>6.5</h3>
+                                <h4>O<sub>2</sub></h4>
+                            </div>
+                            <div>
+                                <h3>0.9</h3>
+                                <h4>CO</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="month-data">
+                        <div class="heading">
+                            <h3>Monthly Rainfall</h3>
+                        </div>
+                        <div class="tail">
+                            <div class="shell">
+                                <div class="data num1"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num2"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num3"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num4"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num5"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num6"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num7"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num8"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num9"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num10"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num11"></div>
+                            </div>
+                            <div class="shell">
+                                <div class="data num12"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="info-right">
+                    <div class="sun-time">
+                        <div class="heading">
+                            <h3>Sunrise & Sunset</h3>
+                        </div>
+                        <div class="middle">
+                            <div class="city"><i class="fas fa-map-marker-alt"></i>
+                                <h4>Delhi</h4>
+                            </div>
+                            <div class="details">
+                                <div class="sunrise">
+                                    <i class="fa fa-sun"></i>
+                                    <div>
+                                        <h5>Sunrise</h5>
+                                        <h4>4.47 AM</h4>
+                                    </div>
+                                </div>
+                                <div class="sunset">
+                                    <i class="fa fa-moon"></i>
+                                    <div>
+                                        <h5>Sunset</h5>
+                                        <h4>6.53 PM</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle">
+                            <div class="city"><i class="fas fa-map-marker-alt"></i>
+                                <h4>Mumbai</h4>
+                            </div>
+                            <div class="details">
+                                <div class="sunrise">
+                                    <i class="fa fa-sun"></i>
+                                    <div>
+                                        <h5>Sunrise</h5>
+                                        <h4>5.47 AM</h4>
+                                    </div>
+                                </div>
+                                <div class="sunset">
+                                    <i class="fa fa-moon"></i>
+                                    <div>
+                                        <h5>Sunset</h5>
+                                        <h4>6.40 PM</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tail">
+                            <div class="line">
+                                <span class="city"><i class="fas fa-map-marker-alt"></i> Bangalore</span>
+                                <span><i class="far fa-sun"></i> 5.15 AM</span>
+                                <span><i class="far fa-moon"></i> 6.45 PM</span>
+                            </div>
+                            <div class="line">
+                                <span class="city"><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+                                <span><i class="far fa-sun"></i> 5.05 AM</span>
+                                <span><i class="far fa-moon"></i> 6.55 PM</span>
+                            </div>
+                            <div class="line">
+                                <span class="city"><i class="fas fa-map-marker-alt"></i> Gujrat</span>
+                                <span><i class="far fa-sun"></i> 5.10 AM</span>
+                                <span><i class="far fa-moon"></i> 6.50 PM</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="right_side">
+            <div class="avatar-container">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Search location...">
+                    <button type="submit" class="search-button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="bell-icon">
+                    <i class="far fa-bell">
+                        <div class="notification"></div>
+                    </i>
+                </div>
+                <div>
+                    <img src="pexels-pixabay-220453.jpg" class="avatar-pic" alt="avatar-pic">
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="first-card">
+                    <div class="city">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Kolkata</h3>
+                    </div>
+                    <div class="weather-icon"><i class='fas fa-cloud-sun-rain'></i></div>
+                    <div class="info">
+                        <p class="date">today, 8 Dec </p>
+                        <h2 class="temp">20&deg</h2>
+
+                        <div class="details">
+                            <div class="status">Sunny</div>
+                            <div class="wind">
+                                <h3><i class="fa fa-wind"></i> Wind </h3> <span>|</span>
+                                <h3> 19 km/h </h3>
+                            </div>
+                            <div class="hum">
+                                <h3><i class="fa fa-tint"></i> Hum </h3> <span>|</span>
+                                <h3> 22 % </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-card">
+                    <div class="details">
+                        <div class="wind">
+                            <h3><i class="fa fa-wind"></i> Wind </h3> <span>|</span>
+                            <h3> 19 km/h </h3>
+                        </div>
+                        <div class="hum">
+                            <h3><i class="fa fa-tint"></i> Hum </h3> <span>|</span>
+                            <h3> 22 % </h3>
+                        </div>
+                    </div>
+                    <div class="city-degree">
+                        <div class="city">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Tokyo</h3>
+                        </div>
+                        <div class="temp">
+                            <h3>26&deg</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="third-card">
+                    <div class="top-card">
+                        <div class="details">
+                            <div class="wind">
+                                <h3><i class="fa fa-wind"></i> Wind </h3> <span>|</span>
+                                <h3> 17 km/h </h3>
+                            </div>
+                            <div class="hum">
+                                <h3><i class="fa fa-tint"></i> Hum </h3> <span>|</span>
+                                <h3> 25 % </h3>
+                            </div>
+                        </div>
+                        <div class="city-degree">
+                            <div class="city">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h3>NY</h3>
+                            </div>
+                            <div class="temp">
+                                <h3>31&deg</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-card">
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
